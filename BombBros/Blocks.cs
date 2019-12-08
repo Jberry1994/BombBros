@@ -14,8 +14,8 @@ namespace BombBros
         public string BlockImagePath { get; set; }
         public Image BlockImage { get; set; }
         public bool Destroyed { get; set; }
-        public const uint BlockWidth = 64;
-        public const uint BlockHeight = 64;
+        public const uint BlockWidth = 16;
+        public const uint BlockHeight = 16;
         public const uint Xscale = 4;
         public const uint Yscale = 4;
 

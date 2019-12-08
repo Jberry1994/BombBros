@@ -18,4 +18,9 @@
     <PackageReference Include="SFML.Net" Version="2.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GameResources\Fonts\" />
+    <Folder Include="GameResources\Images\" />
+  </ItemGroup>
+
 </Project>

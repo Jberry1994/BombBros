@@ -94,6 +94,11 @@ namespace BombBros
         public void Update(GameTime gameTime)
         {
             Arena.Update();
+            if (GetDistance(PlayerOne.Position.X, PlayerOne.Position.Y, Arena.Blocks.FirstOrDefault().Position.X, Arena.Blocks.FirstOrDefault().Position.Y)
+                < Character.CharacterWidth /2 + Blocks.BlockWidth)
+            {
+                
+            }
             PlayerOne.Update(gameTime);
             foreach (Bomb bomb in Bombs)
             {
@@ -129,7 +134,7 @@ namespace BombBros
             }
             if (DisplayDebug)
             {
-                DebugUtility.DisplayDebugInfo(this, PlayerOne, Color.White);
+                DebugUtility.DisplayDebugInfo(this, PlayerOne, Arena.Blocks.FirstOrDefault(), Color.White);
             }
 
 
@@ -169,6 +174,13 @@ namespace BombBros
         private void WindowKeyReleased(object sender, KeyEventArgs e)
         {
             PlayerOne.KeyDownControls(e);
+        }
+        public double GetDistance(float x1, float y1, float x2, float y2)
+        {
+            float xDistance = x2 - x1;
+            float yDistance = y2 - y1;
+            return Math.Sqrt(Math.Pow(xDistance,2) + Math.Pow(yDistance, 2));
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace BombBros
         {
             ConsoleFont = new Font(ConsoleFontPath);
         }
-        public static void DisplayDebugInfo(Game game, Character character, Color fontColor)
+        public static void DisplayDebugInfo(Game game, Character character, Blocks block, Color fontColor)
         {
             if (ConsoleFont != null)
             {
@@ -25,6 +25,7 @@ namespace BombBros
                 string currentFPS = (1.0 / game.GameTime.DeltaTime).ToString("n2");
                 string CurrentPos = ($"X: {character.Position.X} Y: {character.Position.Y}");
                 //string BombTimer = ($"CD: {character.TimeOfLastBomb - character.BombCooldown} ");
+                string Collision = $"{game.GetDistance(character.Position.X, character.Position.Y,block.Position.X, block.Position.Y )}";
                 Text textA = new Text(totalTimeElapsed, ConsoleFont, FontSize)
                 {
                     Position = new Vector2f(4, 8),
@@ -51,11 +52,17 @@ namespace BombBros
                 //    Position = new Vector2f(4, 88),
                 //    FillColor = fontColor
                 //};
+                Text textF = new Text(Collision, ConsoleFont, FontSize)
+                {
+                    Position = new Vector2f(4, 108),
+                    FillColor = fontColor
+                };
                 game.Window.Draw(textA);
                 game.Window.Draw(textB);
                 game.Window.Draw(textC);
                 game.Window.Draw(textD);
                 //game.Window.Draw(textE);
+                game.Window.Draw(textF);
             }
 
         }
