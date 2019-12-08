@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\Bomb.jpg" />
+    <Content Include="bin\Debug\DestroyableRock.jpg" />
+    <Content Include="bin\Debug\Rock.jpg" />
+    <Content Include="bin\Debug\y447I.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SFML.Net" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>
